@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ilavei</title>
+    <title>Ilavei PWA (Alpha release)</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +10,15 @@
 
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <%= yield %>
+    <div id="stage" class="container">
+      <h1 class="header center-align">
+        iLavei - Lavagem ecológica (alpha)
+      </h1>
+      <%= yield %>
+    </div>
   </body>
 </html>
