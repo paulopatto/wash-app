@@ -5,20 +5,56 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <%= stylesheet_link_tag    'application', media: 'all' %>
 
     <link rel="manifest" href="/manifest.json" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="with=device-width, initial-scale=1.0" />
   </head>
 
   <body>
+    <nav class="blue" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="#" class="center brand-logo"> <i class="material-icons">cloud</i> </a>
+        <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul id="nav-desktop" class="right hide-on-med-and-down">
+          <li><a href="">Sobre</a></li>
+          <li><a href="">Bog</a></li>
+          <li><a href="">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="nav-mobile">
+      <li><a href="#!">Sobre</a></li>
+      <li><a href="#!">Bog</a></li>
+      <li><a href="#!">Contato</a></li>
+    </ul>
+
     <div id="stage" class="container">
-      <h1 class="header center-align">
-        iLavei - Lavagem ecológica (alpha)
-      </h1>
       <%= yield %>
     </div>
+
+    <footer class="page-footer blue">
+      <div class="footer-copyright">
+        <div class="container">
+          iLavei Serviços - 2020
+
+          <a class="grey-text text-lighten-4 right" href="#!">
+            <i class="material-icons">chat</i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      /// Initialize materialize mobile menu
+      $(document).ready(() => { $('.sidenav').sidenav(); });
+    </script>
+    <%= javascript_include_tag 'application'  %>
   </body>
 </html>
