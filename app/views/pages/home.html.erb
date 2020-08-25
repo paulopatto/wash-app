@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row">
+  <%
+    # iconset:magic-outline-1
+    services = {
+    'Lavagem'      => 'https://cdn3.iconfinder.com/data/icons/magic-outline-1/32/Magic_Sparkles_Effect-128.png',
+    'Higienização' => 'https://cdn3.iconfinder.com/data/icons/magic-outline-1/32/Magic_Broom-128.png',
+    'Polimento'    => 'https://cdn3.iconfinder.com/data/icons/magic-outline-1/32/Magic_Hand_Fast_Sleight_of_hand-128.png',
+    }
+  %>
+  <% services.map do |service, icon| %>
+    <div class="cal s8 m6">
+      <div class="card hoverable horizontal">
+        <div class="card-image">
+          <img class="responseice-img circle" src="<%= icon %>" />
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span><%= service %></span>
+          </div>
+
+          <div class="card-action">
+            <a class="btn-small waves-effect waves-light blue">Solicitar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -9,24 +9,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+    </style>
+
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="with=device-width, initial-scale=1.0" />
   </head>
 
   <body>
-    <nav class="blue" role="navigation">
-      <div class="nav-wrapper container">
-        <a href="#" class="center brand-logo"> <i class="material-icons">cloud</i> </a>
-        <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <header class="navbar-fixed">
+      <nav class="blue" role="navigation">
+        <div class="nav-wrapper container">
+          <a href="#" class="center brand-logo"> <i class="material-icons">cloud</i> </a>
+          <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-        <ul id="nav-desktop" class="right hide-on-med-and-down">
-          <li><a href="">Sobre</a></li>
-          <li><a href="">Bog</a></li>
-          <li><a href="">Contato</a></li>
-        </ul>
-      </div>
-    </nav>
+          <ul id="nav-desktop" class="right hide-on-med-and-down">
+            <li><a href="">Sobre</a></li>
+            <li><a href="">Bog</a></li>
+            <li><a href="">Contato</a></li>
+          </ul>
+
+          <a href="#!" class="right flow-text grey-text" >Alpha Release</a>
+        </div>
+      </nav>
+    </header>
 
     <ul class="sidenav" id="nav-mobile">
       <li><a href="#!">Sobre</a></li>
@@ -34,9 +51,9 @@
       <li><a href="#!">Contato</a></li>
     </ul>
 
-    <div id="stage" class="container">
+    <main id="stage" class="container">
       <%= yield %>
-    </div>
+    </main>
 
     <footer class="page-footer blue">
       <div class="footer-copyright">
