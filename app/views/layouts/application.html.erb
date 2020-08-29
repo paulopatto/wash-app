@@ -1,77 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ilavei PWA (Alpha release)</title>
+    <title>Cloth (Alpha)</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-
-    <style>
-      body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-
-      }
-
-      main {
-        flex: 1 0 auto;
-      }
-    </style>
 
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
   <body>
     <header class="navbar-fixed">
-      <nav class="blue" role="navigation">
-        <div class="nav-wrapper container">
-          <a href="#" class="center brand-logo"> <i class="material-icons">cloud</i> </a>
-          <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-          <ul id="nav-desktop" class="right hide-on-med-and-down">
-            <li><a href="">Sobre</a></li>
-            <li><a href="">Bog</a></li>
-            <li><a href="">Contato</a></li>
-          </ul>
-
-          <a href="#!" class="right flow-text grey-text" >Alpha Release</a>
-        </div>
-      </nav>
+      <%= render template: "shared/header" %>
     </header>
 
-    <ul class="sidenav" id="nav-mobile">
-      <li><a href="#!">Sobre</a></li>
-      <li><a href="#!">Bog</a></li>
-      <li><a href="#!">Contato</a></li>
-    </ul>
 
     <main id="stage" class="container">
       <%= yield %>
     </main>
 
     <footer class="page-footer blue">
-      <div class="footer-copyright">
-        <div class="container">
-          iLavei Serviços - 2020
-
-          <a class="grey-text text-lighten-4 right" href="#!">
-            <i class="material-icons">chat</i>
-          </a>
-        </div>
-      </div>
+      <%= render template: "shared/footer" %>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript">
-      /// Initialize materialize mobile menu
-      $(document).ready(() => { $('.sidenav').sidenav(); });
-    </script>
     <%= javascript_include_tag 'application'  %>
   </body>
 </html>
