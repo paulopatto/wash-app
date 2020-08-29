@@ -13,4 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+//= require jquery
+//= require materialize-css/dist/js/materialize
 //= require serviceworker-companion
+
+
+/// Initialize materialize mobile menu
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+  console.log('Application ready!');
+});
